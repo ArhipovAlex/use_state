@@ -2,9 +2,15 @@ function Task(props)
 {
     return(
         <div className="task">
+        <div  style={{textDecoration: props.task.done ? "line-through": ""}}>
             {props.task.text}
-            <button>DONE</button>
         </div>
+<div>
+            <button onClick={()=>props.doneTask(props.index)}>DONE</button>
+            <button onClick={()=>props.deleteTask(props.index)}>X</button>
+</div>
+        </div>
+
     )
 }
 export default Task;
